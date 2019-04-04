@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class WelcomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public static String userName=null;
+  
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,17 +31,12 @@ public class WelcomeServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String user =  request.getParameter("username");
-		userName=user;
 		
 		response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
 	    out.println("<h1> Welcome " + user + "</h1>");
 		
-		out.println("<a href=\"/LoginExample/logout\">Click here to logout</a>");
-		
-	    
-	    
 	}
 	
 

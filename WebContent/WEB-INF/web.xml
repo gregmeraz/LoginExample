@@ -8,24 +8,11 @@
     <servlet-class>com.servlet.WelcomeServlet</servlet-class>
   </servlet>
   
-  <servlet>
-  	<servlet-name>logoutServlet</servlet-name>
-  	<servlet-class>com.servlet.LogoutServlet</servlet-class>
-  </servlet>
-  
   <servlet-mapping>
     <servlet-name>welcomeServlet</servlet-name>
     <url-pattern>/welcome</url-pattern>
   </servlet-mapping>
-  
-  <servlet-mapping>
-  	<servlet-name>logoutServlet</servlet-name>
-  	<url-pattern>/logout</url-pattern>
-  </servlet-mapping>
-  
-  
-  
-  
+    
   <filter>
     <filter-name>loginFilter</filter-name>
     <filter-class>com.servlet.LoginFilter</filter-class>

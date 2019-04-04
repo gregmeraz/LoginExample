@@ -8,7 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet Filter implementation class LoginFilter
@@ -37,24 +36,9 @@ public class LoginFilter implements Filter {
 		String user = request.getParameter("username");
 		String pass = request.getParameter("password");
 		
-		HttpServletResponse httpServletResponse=(HttpServletResponse) response;
-		
-		if(user!=null && pass !=null) {
-			if(user.equals("admin") && pass.equals("test")){
-				chain.doFilter(request, response);
-			}
-			
-			else {
-				System.out.println("Wrong username or password");
-				httpServletResponse.sendRedirect("/LoginExample/login.html");
-			}
-			
+		if(user.equals("admin") && pass.equals("test")){
+			chain.doFilter(request, response);
 		}
-		else {
-			System.out.println("Null username or password");
-			httpServletResponse.sendRedirect("/LoginExample/login.html");
-		}
-		
 		
 		
 	}
